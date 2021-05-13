@@ -194,12 +194,21 @@ p {
 
 
 /*====================================================================================================*/
-.page-header {
+/* Common Flex Properties on toplevel sections */
+.page-header, .page-section-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: center; 
+}
+/*====================================================================================================*/
 
+
+
+
+
+/*====================================================================================================*/
+.page-header {
     /* This is to prevent side scrolling due to overflowing image from .page-header__hero class */
     overflow-x: hidden; 
 }
@@ -219,7 +228,7 @@ p {
     margin-bottom: clamp(48px,calc((48/375)*100vw),72px);
 }
 
-.page-header__main {
+.page-header__main .container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,7 +245,8 @@ p {
 
 @media screen and (min-width: 800px){
     /* At this breakpoint smooth splitting of hero image is desired.
-     * Header main will be later be pull-up once sufficient white space is available between splitted image*/
+     * Header main will be later be pull-up once sufficient white space is available between splitted image
+     * Same with mobile  and tablet screens, the width of .page-header__hero is larger than parent.*/
     .page-header__hero {
         width: min(104.444444444%, 1504px);
         height: clamp(303px,calc((303/768)*100vw),358px);
@@ -261,3 +271,53 @@ p {
     }
 
 }
+/*====================================================================================================*/
+
+
+
+
+/*====================================================================================================*/
+.section-spacer {
+    margin-top: clamp(64px,calc((64/375)*100vw),80px);
+    margin-bottom: clamp(64px,calc((64/375)*100vw),67px);
+}
+
+@media screen and (min-width: 768px){
+    .section-spacer {
+        margin-top: clamp(80px,calc((80/375)*100vw),110px);
+        margin-bottom: 64px;
+    }
+}
+.section-spacer__tail {
+    height: 84px;
+    opacity: 0.25;
+    border-right: 0.5px solid #87879D;
+    transform: translateX(-28px);
+}
+.section-spacer__body {
+    width: 56px;
+    height: 56px;
+    background: var(--color-neutral-light);
+    border: 1px solid rgba(135, 135, 157, 0.25);
+    box-sizing: border-box;
+    border-radius: 29px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.image-grid img {
+    width : clamp(151px,calc((151/375)*100vw),255px);
+    height: clamp(143px,calc((151/375)*100vw),242px);
+    border-radius: 8px;
+}
+
+/*====================================================================================================*/
