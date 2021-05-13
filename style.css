@@ -310,6 +310,7 @@ p {
 }
 .section-spacer__body {
     font-weight: 900;
+    font-size: 18px;
     width: 56px;
     height: 56px;
     background: var(--color-neutral-light);
