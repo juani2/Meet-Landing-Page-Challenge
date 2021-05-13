@@ -328,12 +328,12 @@ p {
     align-items: center;
     flex-wrap: wrap;
     gap: 24px;
-    margin-bottom: clamp(64px,calc((48/768)*100vw),72px);
+    margin-bottom: 64px;
 }
 @media screen and (min-width:740px){
     .image-grid {
         gap: clamp(11px,calc((11/740)*100vw),30px);
-        margin-bottom: clamp(48px,calc((48/768)*100vw),80px);
+        margin-bottom: clamp(48px,calc((48/768)*100vw),72px);
     }
 }
 .image-grid img {
