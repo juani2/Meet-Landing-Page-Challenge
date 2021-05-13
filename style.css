@@ -1,0 +1,263 @@
+/*====================================================================================================*/
+/* Box Model Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*====================================================================================================*/
+
+
+
+
+/*====================================================================================================*/
+/* Color Variables */
+:root {
+    --color-brand-primary: #4d96a9;
+    --color-brand-primary--light: #8fe3f9;
+    --color-brand-secondary: #855fb1;
+    --color-brand-secondary--light: #d9b8ff;
+    --color-neutral-primary: #28283d;
+    --color-neutral-secondary: #87879d;
+    --color-neutral-light: #fafafa;
+}
+/*====================================================================================================*/
+
+
+
+
+/*====================================================================================================*/
+/* 
+ * Typography Settings 
+ * Arrange in strict order: font-weight, font-size, line-height 
+ *
+ */
+html,
+body {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 500;
+
+    /* As per design of the body copy, only font-size was responsive */
+    font-size: clamp(16px,calc((16/375)*100vw),18px); 
+    line-height: 26px;
+    color: var(--color-neutral-secondary);
+    background-color: var(--color-neutral-light);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 900;
+    color: var(--color-neutral-primary);
+}
+
+h1 {
+    /* 
+     * Clamp's preferred value for font-size and line height starts 
+     * at tablet size then expands and shrinks as viewport moves 
+     * either towards mobile or desktop screen.
+     *
+     */
+    font-size: clamp(40px,calc((48/768)*100vw),64px);
+    line-height: clamp(44px,calc((48/768)*100vw),64px);
+    margin-bottom: clamp(24px,calc((24/375)*100vw),34px);
+}
+
+h2 {
+    /* 
+     * Clamp's preferred value starts at mobile size then expands 
+     * as viewport moves either towards desktop screen 
+     *
+     */
+    font-size: clamp(32px,calc((32/375)*100vw),40px);
+    line-height: clamp(36px,calc((36/375)*100vw),44px);
+    margin-bottom: 32px;
+}
+
+p {
+    margin-bottom: 32px;
+}
+
+.text-overline {
+    /* As per design, overline text is not responsive */
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color :var(--color-brand-primary)
+}
+.sr-only {
+    display: none;
+}
+.text-center {
+    text-align: center;
+}
+/*====================================================================================================*/
+
+
+
+
+/*====================================================================================================*/
+.button {
+    padding: 16px 29px;
+    border-radius: 29px;
+    display: inline-block;
+    background-color: var(--color-neutral-primary);
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--color-neutral-light);
+}
+
+/* This button modifier is used when you want to contrast the button name and version no. */
+.button--with-version > span {
+    display: inline-block;
+}
+.button--primary--with-version > span:first-child {
+    margin-right: 2px;
+}
+.button--primary--with-version > span:last-child {
+    margin-left: 2px;
+    color: var(--color-brand-primary--light);
+}
+
+.button--primary {
+    /* Slightly wide padding */
+    padding: 16px 40px;
+    background-color: var(--color-brand-primary);
+}
+.button--primary:hover{
+    background-color: #71C0D4;
+}
+.button-secondary{
+    background-color: var(--color-brand-secondary);
+}
+.button-secondary:hover{
+    background-color: #B18BDD;
+}
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+/*====================================================================================================*/
+
+
+
+
+
+/*====================================================================================================*/
+.show-border-primary {
+    border: 1px dashed var(--color-brand-primary);
+}
+.show-border-secondary {
+    border: 1px dashed var(--color-brand-secondary);
+}
+
+.img-fluid {
+    width: 100%;
+}
+/*====================================================================================================*/
+
+
+
+
+
+/*====================================================================================================*/
+.container {
+    width: min(87.2%, 1110px);
+    margin: 0 auto;
+}
+/*====================================================================================================*/
+
+
+
+
+
+/*====================================================================================================*/
+.page-nav__brand {
+    display: block;
+    margin-top: clamp(48px,calc((48/375)*100vw),80px);
+    margin-bottom: clamp(54px,calc((54/375)*100vw),64px);
+    text-align: center;
+}
+@media screen and (min-width:768px){
+    .page-nav__brand{
+        margin-bottom: 61px;
+    }
+}
+/*====================================================================================================*/
+
+
+
+
+
+/*====================================================================================================*/
+.page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /* This is to prevent side scrolling due to overflowing image from .page-header__hero class */
+    overflow-x: hidden; 
+}
+
+.page-header__hero {
+    /* 
+     * Hero width is larger than its parent(mobile and tablet viewport only)
+     * so that we can overflow the images similar to the design requirements.
+     *
+     */
+    width: min(110.4%, 820px);
+    height: clamp(153px,calc((153/375)*100vw),303px);
+    background-image: url('/assets//tablet/image-hero.png');
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin-bottom: clamp(48px,calc((48/375)*100vw),72px);
+}
+
+.page-header__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-header__main h1 {
+    max-width: 10ch;
+}
+
+.page-header__main p {
+    max-width: 45ch;
+}
+
+@media screen and (min-width: 800px){
+    /* At this breakpoint smooth splitting of hero image is desired.
+     * Header main will be later be pull-up once sufficient white space is available between splitted image*/
+    .page-header__hero {
+        width: min(104.444444444%, 1504px);
+        height: clamp(303px,calc((303/768)*100vw),358px);
+        background-image: url('/assets/desktop/image-hero-left.png'),url('/assets/desktop/image-hero-right.png');
+        background-size: 394px 303px, 394px 303px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: top 0 left 0, bottom 0 right 0;
+    }
+
+    .page-header__main {
+        margin-top: 47px;
+        margin-bottom: 7px;
+    }
+}
+@media screen and (min-width: 1280px){
+    /* In this breakpoint, sufficient white space is now available between the 'splitted image'
+     * we can now pull page-header__main element in between the splitted image via negative margins
+     */
+    .page-header__hero{
+        --page-header__hero-height: clamp(303px,calc((303/768)*100vw),358px);
+        margin-bottom: calc(-1*var(--page-header__hero-height));
+    }
+
+}
