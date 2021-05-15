@@ -421,7 +421,7 @@ p {
 
 @media screen and (min-width: 768px) {
     .page-footer__main {
-        padding-bottom: clamp(66px,calc((66/768)*100vw),76px);
+        padding-bottom: clamp(66px,calc((66/768)*100vw),72px);
     }
     .page-footer__main::after {
         background-image: url("/assets/tablet/image-footer.jpg");
