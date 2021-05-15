@@ -372,7 +372,8 @@ p {
 .page-footer .section-spacer {
     /* Places the .page-footer__main element to the half of the body of the spacer.
      * Pulls the .page-footer__main element 28px upwards. */
-    margin-bottom: -28px; 
+    margin-top: clamp(64px,calc((64/375)*100vw),80px);
+     margin-bottom: -28px; 
     z-index: 3;
 }
 
@@ -424,6 +425,9 @@ p {
     }
     .page-footer__main::after {
         background-image: url("/assets/tablet/image-footer.jpg");
+    }
+    .page-footer .section-spacer {
+        margin-top: 72px;
     }
 }
 
