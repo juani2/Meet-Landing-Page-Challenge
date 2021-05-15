@@ -125,7 +125,7 @@ p {
 .button--primary--with-version > span:first-child {
     margin-right: 2px;
 }
-.button--with-version > span:last-child {
+.button--primary--with-version > span:last-child {
     margin-left: 2px;
     color: var(--color-brand-primary--light);
 }
